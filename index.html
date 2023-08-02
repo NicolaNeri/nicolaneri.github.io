@@ -17,6 +17,14 @@
      width: 100%;
      object-fit: cover;
    }
+   
+    .hidden {
+      opacity: 0;
+    }
+
+    .visible {
+      opacity: 1;
+    }
 
     .text {
       padding: 75px 150px;
@@ -27,7 +35,8 @@
 
 <body>
   <div class="images">
-    <img src="-h3w3ex.jpg">
+    <img src="-h3w3ex.jpg" class="img1 hidden">
+    <img src="edited_nicolaneri_gfx-20230803-0001.jpg" class="img2 visible">
   </div>
  <div class="text"> 
   <h1>Nicola Neri</h1>
@@ -39,4 +48,23 @@
   <a href="https://twitter.com/nicolaneri_gfx">Twitter</a><br />
   <a href="https://www.instagram.com/nicolaneri_gfx/">Instagram</a>
  </div>
+
+<script>
+const IMAGES = 2
+
+function myFunction() {
+  for(let i = 0; i < IMAGES; i++) {
+    let o = document.querySelector(`.img${img}`);
+    o.classList.remove("hidden");
+    o.classList.remove("visible");
+}
+  document.querySelector(`.img${img}`).classList.add("visible");
+ 
+ img = (img + 1) % IMAGES;
+}
+
+let img = 0;
+setInterval(myFunction, 10000);
+
+</script>
 </body>
