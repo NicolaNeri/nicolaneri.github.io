@@ -55,10 +55,12 @@ const IMAGES = 2
 function myFunction() {
   for(let i = 0; i < IMAGES; i++) {
     let o = document.querySelector(`.img${img}`);
-    o.classList.remove("hidden");
     o.classList.remove("visible");
+    o.classList.add("hidden");
 }
-  document.querySelector(`.img${img}`).classList.add("visible");
+  let u = document.querySelector(`.img${img}`);
+  u.classList.remove("hidden");
+  u.classList.add("visible");
  
  img = (img + 1) % IMAGES;
 }
